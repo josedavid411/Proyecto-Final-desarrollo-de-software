@@ -20,7 +20,7 @@ public class Compra {
         this.id = id.trim();
         this.fecha = Objects.requireNonNull(fecha, "fecha");
         this.cliente = Objects.requireNonNull(cliente, "cliente");
-        if (productos == null || productos.isEmpty() || productos.contains(null)) {
+        if (productos == null || productos.isEmpty() || productos.stream().anyMatch(Objects::isNull)) {
             throw new IllegalArgumentException("La compra debe incluir productos.");
         }
         this.productos.addAll(productos);

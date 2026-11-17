@@ -1,38 +1,35 @@
 package com.mycompany.proyectofinaldesarollosoft.model;
 
+import com.mycompany.proyectofinaldesarollosoft.enums.Rareza;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Booster extends Producto {
     public static final int CANTIDAD_CARTAS = 10;
 
     private final List<Carta> cartas;
     private boolean abierto;
-    private String idComprador;
 
-    public Booster(String id, String nombre, BigDecimal precioCOP, List<Carta> cartas) {
-        super(id, nombre, precioCOP);
-        if (cartas == null || cartas.size() != CANTIDAD_CARTAS || cartas.contains(null)) {
-            throw new IllegalArgumentException("Un booster debe contener exactamente diez cartas.");
-        }
-        this.cartas = List.copyOf(cartas);
+    public Booster(String id, String nombre, BigDecimal precioBaseUSD) {
+        super(id, nombre, precioBaseUSD);
+        this.cartas = generarContenido();
     }
 
-    public void venderA(String clienteId) {
-        if (clienteId == null || clienteId.isBlank()) {
-            throw new IllegalArgumentException("El cliente es obligatorio.");
+    private List<Carta> generarContenido() {
+        List<Carta> contenido = new ArrayList<>(CANTIDAD_CARTAS);
+        for (int i = 0; i < CANTIDAD_CARTAS; i++) {
+            contenido.add(new Carta(
+                    UUID.randomUUID().toString(),
+                    "Carta " + (i + 1),
+                    Rareza.sortear(),
+                    BigDecimal.ZERO));
         }
-        if (!estaDisponible()) {
-            throw new IllegalStateException("El booster ya fue vendido.");
-        }
-        idComprador = clienteId;
-        marcarNoDisponible();
+        return List.copyOf(contenido);
     }
 
-    public List<Carta> abrir(String clienteId) {
-        if (estaDisponible() || !idComprador.equals(clienteId)) {
-            throw new IllegalStateException("Solo el comprador puede abrir este booster.");
-        }
+    public List<Carta> abrir() {
         if (abierto) {
             throw new IllegalStateException("El booster ya fue abierto.");
         }
@@ -42,14 +39,6 @@ public class Booster extends Producto {
 
     public boolean estaAbierto() {
         return abierto;
-    }
-
-    public boolean estaVendido() {
-        return !estaDisponible();
-    }
-
-    public String getIdComprador() {
-        return idComprador;
     }
 
     public List<Carta> getCartas() {

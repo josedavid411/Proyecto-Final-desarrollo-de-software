@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente extends Usuario {
+    private final Inventario inventario;
     private final List<Compra> historialCompras = new ArrayList<>();
     private final List<String> torneosInscritos = new ArrayList<>();
 
     public Cliente(String id, String nombre, String username, String password) {
         super(id, nombre, username, password, Rol.CLIENTE);
+        this.inventario = new Inventario();
     }
 
     public void registrarCompra(Compra compra) {
@@ -40,5 +42,9 @@ public class Cliente extends Usuario {
 
     public List<String> getTorneosInscritos() {
         return List.copyOf(torneosInscritos);
+    }
+
+    public Inventario getInventario() {
+        return inventario;
     }
 }

@@ -6,8 +6,8 @@ public class Accesorio extends Producto {
     private final String tipo;
     private final String descripcion;
 
-    public Accesorio(String id, String nombre, BigDecimal precioCOP, String tipo, String descripcion) {
-        super(id, nombre, precioCOP);
+    public Accesorio(String id, String nombre, BigDecimal precioBaseUSD, String tipo, String descripcion) {
+        super(id, nombre, precioBaseUSD);
         if (tipo == null || tipo.isBlank()) {
             throw new IllegalArgumentException("El tipo de accesorio es obligatorio.");
         }

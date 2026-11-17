@@ -25,7 +25,8 @@ public class Torneo {
     }
 
     public boolean inscribirCliente(Cliente cliente) {
-        if (cliente == null || !hayCupos()
+        if (cliente == null || !(participantes.size() < maxParticipantes)
+                || LocalDate.now().isAfter(this.fecha)
                 || cliente.estaInscritoEn(id)
                 || participantes.stream().anyMatch(actual -> actual.getId().equals(cliente.getId()))) {
             return false;

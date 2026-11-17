@@ -19,6 +19,20 @@ public class Inventario {
         return productos.removeIf(producto -> producto.getId().equals(id));
     }
 
+    public Producto transferirProducto(String id, Inventario destino) {
+        if (destino == null || destino == this) {
+            throw new IllegalArgumentException("El inventario de destino debe ser distinto.");
+        }
+        Producto producto = buscarProducto(id)
+                .orElseThrow(() -> new IllegalArgumentException("El producto no está en este inventario."));
+        if (destino.buscarProducto(id).isPresent()) {
+            throw new IllegalArgumentException("El producto ya está en el inventario de destino.");
+        }
+        productos.remove(producto);
+        destino.agregarProducto(producto);
+        return producto;
+    }
+
     public Optional<Producto> buscarProducto(String id) {
         return productos.stream().filter(producto -> producto.getId().equals(id)).findFirst();
     }
