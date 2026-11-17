@@ -14,6 +14,15 @@ public class Cliente extends Usuario {
         this.inventario = new Inventario();
     }
 
+    public static Cliente restaurar(String id, String nombre, String username, String credencial) {
+        return new Cliente(id, nombre, username, credencial, true);
+    }
+
+    private Cliente(String id, String nombre, String username, String credencial, boolean credencialHasheada) {
+        super(id, nombre, username, credencial, Rol.CLIENTE, credencialHasheada);
+        this.inventario = new Inventario();
+    }
+
     public void registrarCompra(Compra compra) {
         if (compra == null || !getId().equals(compra.getCliente().getId())) {
             throw new IllegalArgumentException("La compra debe pertenecer a este cliente.");
@@ -46,5 +55,11 @@ public class Cliente extends Usuario {
 
     public Inventario getInventario() {
         return inventario;
+    }
+
+    public void restaurarTorneoInscrito(String torneoId) {
+        if (torneoId != null && !torneosInscritos.contains(torneoId)) {
+            torneosInscritos.add(torneoId);
+        }
     }
 }

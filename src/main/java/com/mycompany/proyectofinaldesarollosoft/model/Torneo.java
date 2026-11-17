@@ -25,11 +25,18 @@ public class Torneo {
     }
 
     public boolean inscribirCliente(Cliente cliente) {
-        if (cliente == null || !(participantes.size() < maxParticipantes)
-                || LocalDate.now().isAfter(this.fecha)
-                || cliente.estaInscritoEn(id)
+        if (cliente == null) {
+            throw new IllegalArgumentException("El cliente es obligatorio.");
+        }
+        if (!(participantes.size() < maxParticipantes)) {
+            throw new IllegalStateException("El torneo no tiene cupos disponibles.");
+        }
+        if (LocalDate.now().isAfter(this.fecha)) {
+            throw new IllegalStateException("No se puede inscribir en un torneo cuya fecha ya pasó.");
+        }
+        if (cliente.estaInscritoEn(id)
                 || participantes.stream().anyMatch(actual -> actual.getId().equals(cliente.getId()))) {
-            return false;
+            throw new IllegalStateException("El cliente ya está inscrito en este torneo.");
         }
         cliente.registrarInscripcion(id);
         participantes.add(cliente);
@@ -46,6 +53,14 @@ public class Torneo {
             }
         }
         return false;
+    }
+
+    public void restaurarParticipante(Cliente cliente) {
+        if (cliente == null || participantes.stream().anyMatch(actual -> actual.getId().equals(cliente.getId()))) {
+            return;
+        }
+        participantes.add(cliente);
+        cliente.restaurarTorneoInscrito(id);
     }
 
     public boolean hayCupos() {

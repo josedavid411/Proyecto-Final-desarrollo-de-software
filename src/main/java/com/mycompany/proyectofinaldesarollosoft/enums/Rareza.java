@@ -31,6 +31,27 @@ public enum Rareza {
         return orden;
     }
 
+    public Rareza getRarezaInferiorMasCercana() {
+        return desdeOrden(orden - 1, -1);
+    }
+
+    public Rareza getRarezaSuperiorMasCercana() {
+        return desdeOrden(orden + 1, 1);
+    }
+
+    private static Rareza desdeOrden(int ordenInicial, int incremento) {
+        for (int ordenBuscado = ordenInicial;
+                ordenBuscado >= 0 && ordenBuscado < values().length;
+                ordenBuscado += incremento) {
+            for (Rareza rareza : values()) {
+                if (rareza.orden == ordenBuscado) {
+                    return rareza;
+                }
+            }
+        }
+        return null;
+    }
+
     public static Rareza sortear() {
         double valor = ThreadLocalRandom.current().nextDouble();
         double acumulado = 0;
