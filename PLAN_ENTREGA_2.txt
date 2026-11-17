@@ -1,0 +1,96 @@
+CARDS4PLAY - AVANCE DE LA ENTREGA 2 (50 %)
+================================================
+
+Alcance de este avance
+----------------------
+Se preparó la estructura Maven y se implementó el primer bloque de clases de
+dominio. Es una base revisable, no una API terminada. No se implementaron rutas
+REST, persistencia JSON, autenticación HTTP, API de cambio, Docker ni despliegue:
+son parte del trabajo posterior y no se adelantan entregas siguientes.
+
+Estructura creada
+-----------------
+src/main/java/com/mycompany/proyectofinaldesarollosoft/
+  Main.java
+  enums/
+    Rol.java
+    Rareza.java
+  model/
+    Usuario.java
+    Administrador.java
+    Cliente.java
+    Producto.java
+    Carta.java
+    Booster.java
+    ProductoSellado.java
+    Accesorio.java
+    Compra.java
+    Torneo.java
+    Inventario.java
+
+Se mantuvo el paquete Java que ya usaba el proyecto NetBeans para no romper
+su configuración, aunque el diagrama propone el paquete cards4play.
+
+Qué se tuvo en cuenta y por qué
+-------------------------------
+* Usuario y Producto son abstractas; Administrador y Cliente heredan de
+  Usuario, y Carta, Booster, ProductoSellado y Accesorio heredan de Producto.
+  Así se sigue la abstracción y herencia del diagrama y se centralizan los
+  atributos compartidos.
+* Rol y Rareza son enums. Rareza concentra los códigos, el orden y las
+  probabilidades indicadas en el enunciado (50/25/15/7/3 %).
+* Se usan BigDecimal para precios, copias inmutables de listas al consultarlas,
+  validaciones en constructores y tipos java.time para fechas.
+* Booster exige diez cartas, retiene su contenido, deja registrar una venta y
+  limita la apertura a su comprador una sola vez. La futura API deberá usar
+  respuestas DTO que oculten las cartas mientras no se abra; no debe serializar
+  directamente el modelo completo.
+* Torneo controla cupos e inscripciones duplicadas y sincroniza la inscripción
+  con el historial del Cliente. Inventario concentra altas, búsquedas, bajas y
+  consultas por disponibilidad o rareza.
+* La contraseña se excluye de la serialización Java/Gson con transient. Esto no
+  sustituye el hash de contraseñas, que debe incorporarse al servicio de
+  autenticación antes de exponer usuarios por HTTP.
+* Se añadieron Spark Java y Gson en Maven como dependencias planeadas para la API
+  REST ligera y la persistencia JSON solicitadas. Todavía no se usan en rutas ni
+  en almacenamiento.
+
+Opinión sobre la entrega 1 (diagrama)
+------------------------------------
+El diagrama es una buena primera entrega: identifica las entidades centrales,
+las relaciones de herencia y las responsabilidades de inventario, compras,
+torneos y tasa de cambio. La separación Usuario/Producto como bases abstractas
+y los enums de Rol/Rareza son decisiones adecuadas para este dominio.
+
+Antes de darlo por definitivo, conviene revisar en equipo estos puntos:
+1. El documento pide una clase Inscripcion, pero el diagrama modela la relación
+   directamente con una lista de participantes en Torneo. Decidir si se conserva
+   esa clase para guardar fecha/detalles de inscripción o si basta la asociación.
+2. Compra muestra varios productos, pero los boosters son unidades únicas y se
+   venden una sola vez; la implementación debe impedir que una misma unidad se
+   agregue a dos compras.
+3. La rareza del booster debe sortearse según probabilidades, con respaldo si
+   falta una rareza. La creación del booster debe coordinar Inventario y Rareza.
+4. El contenido de un booster debe permanecer oculto en consultas de inventario
+   e historial hasta que su comprador lo abra.
+5. El dibujo mezcla precioCOP del producto con precioBaseUSD de la carta. El
+   servicio de tasa deberá calcular la conversión y registrar si la tasa vino de
+   la API o del valor por defecto.
+6. El modelo marca operaciones de dominio; los códigos HTTP y los permisos por
+   rol pertenecen a los servicios/controladores, no a estas entidades.
+
+Plan propuesto para completar el otro 50 % de la entrega 2
+----------------------------------------------------------
+1. Revisar contigo nombres, paquetes, atributos y relaciones de las clases
+   creadas; ajustar el modelo según tu aprobación.
+2. Completar comportamientos de dominio que faltan: creación probabilística de
+   boosters y respaldo por rareza, reglas de compra y servicios de usuarios,
+   torneos e inventario.
+3. Crear los controladores y servicios REST con autenticación y permisos, y
+   respuestas JSON con los códigos HTTP del enunciado.
+4. Añadir persistencia JSON y el servicio de tasa de cambio con timeout, tasa
+   alternativa y origen de la tasa.
+5. Añadir pruebas de casos normales y errores y verificar el proyecto con Maven.
+
+La colección Postman, README final, Docker, PaaS y repositorio GitHub se dejan
+para las etapas posteriores indicadas en el enunciado.

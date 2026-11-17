@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "usuarios": [
+    {
+      "id": "admin-default",
+      "nombre": "Administrador",
+      "username": "admin",
+      "credencial": "RyG3Q2QaU9dCI9S1syI81A\u003d\u003d:T1Ar+A5e7IhWopqGPjwEotq9hGulb6P7VRKLjhdxlQs\u003d",
+      "rol": "ADMIN"
+    },
+    {
+      "id": "67614001-a2f6-47e6-bcb5-42c1187d06e9",
+      "nombre": "Cliente de demostración",
+      "username": "cliente-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+      "credencial": "dDqqHN6pan0XFxFB78NsGg\u003d\u003d:BObJNHl0uVe0sMKgyR76faIce2vLxEXWXwWltIpzcAA\u003d",
+      "rol": "CLIENTE"
+    }
+  ],
+  "productosTienda": [
+    {
+      "tipo": "CARTA",
+      "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+      "nombre": "Carta Rara",
+      "precioBaseUSD": 1.25,
+      "precioCOP": 5000.00,
+      "disponible": true,
+      "rareza": "RARO",
+      "abierto": false
+    },
+    {
+      "tipo": "CARTA",
+      "id": "carta-ultra-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+      "nombre": "Carta Ultra Rara",
+      "precioBaseUSD": 4.50,
+      "precioCOP": 18000.00,
+      "disponible": true,
+      "rareza": "ULTRA_RARO",
+      "abierto": false
+    },
+    {
+      "tipo": "SELLADO",
+      "id": "caja-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+      "nombre": "Caja sellada",
+      "precioBaseUSD": 12.75,
+      "precioCOP": 51000.00,
+      "disponible": true,
+      "descripcion": "Producto de demostración",
+      "abierto": false
+    },
+    {
+      "tipo": "ACCESORIO",
+      "id": "accesorio-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+      "nombre": "Fundas",
+      "precioBaseUSD": 3.20,
+      "precioCOP": 12800.00,
+      "disponible": true,
+      "descripcion": "Fundas para cartas",
+      "tipoAccesorio": "Protección",
+      "abierto": false
+    }
+  ],
+  "inventariosClientes": [
+    {
+      "clienteId": "67614001-a2f6-47e6-bcb5-42c1187d06e9",
+      "productos": [
+        {
+          "tipo": "BOOSTER",
+          "id": "booster-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+          "nombre": "Booster de demostración",
+          "precioBaseUSD": 8.50,
+          "precioCOP": 34000.00,
+          "disponible": true,
+          "abierto": true,
+          "propietarioId": "67614001-a2f6-47e6-bcb5-42c1187d06e9",
+          "cartas": [
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "carta-rara-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+              "nombre": "Carta Rara",
+              "precioBaseUSD": 1.25,
+              "precioCOP": 5000.00,
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "compras": [
+    {
+      "id": "a2b2b1be-e140-48eb-b636-1e1afe0ddd9e",
+      "fecha": "2026-11-16",
+      "clienteId": "67614001-a2f6-47e6-bcb5-42c1187d06e9",
+      "productoIds": [
+        "booster-ca135e13-2a61-4143-8d18-e9adbed0bfd5"
+      ]
+    }
+  ],
+  "torneos": [
+    {
+      "id": "torneo-ca135e13-2a61-4143-8d18-e9adbed0bfd5",
+      "nombre": "Torneo de demostración",
+      "fecha": "2026-11-23",
+      "maxParticipantes": 16,
+      "participantesIds": [
+        "67614001-a2f6-47e6-bcb5-42c1187d06e9"
+      ]
+    }
+  ]
+}

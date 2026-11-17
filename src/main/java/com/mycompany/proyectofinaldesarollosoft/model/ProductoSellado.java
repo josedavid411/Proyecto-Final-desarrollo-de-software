@@ -13,4 +13,8 @@ public class ProductoSellado extends Producto {
     public String consultarInformacion() {
         return descripcion;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 }

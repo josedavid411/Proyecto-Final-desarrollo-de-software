@@ -1,0 +1,125 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "com.mycompany.proyectofinaldesarollosoft.model" {
+    class Tienda {
+        - usuarios: List<Usuario>
+        - torneos: List<Torneo>
+        - inventario: Inventario
+        - servicioTasaCambio: ServicioTasaCambio
+        + registrarUsuario(usuario: Usuario): void
+        + registrarProducto(producto: Producto): void
+        + eliminarProducto(productoId: String): boolean
+        + crearTorneo(id: String, nombre: String, fecha: LocalDate, maxParticipantes: int): Torneo
+        + comprarProducto(cliente: Cliente, productoId: String): Compra
+    }
+
+    class Inventario {
+        - productos: List<Producto>
+        + agregarProducto(producto: Producto): void
+        + eliminarProducto(id: String): boolean
+        + transferirProducto(id: String, destino: Inventario): Producto
+        + buscarProducto(id: String): Optional<Producto>
+        + listarProductos(): List<Producto>
+    }
+
+    abstract class Producto {
+        - id: String
+        - nombre: String
+        - precioBaseUSD: BigDecimal
+        - precioCOP: BigDecimal
+        - disponible: boolean
+        + calcularPrecioCOP(tasa: BigDecimal): BigDecimal
+        + actualizarPrecio(precioCOP: BigDecimal): void
+        + estaDisponible(): boolean
+    }
+
+    class Carta {
+        - rareza: Rareza
+    }
+    class Booster {
+        - cartas: List<Carta>
+        - abierto: boolean
+        - generarContenido(): List<Carta>
+        + abrir(): List<Carta>
+    }
+    class ProductoSellado {
+        - descripcion: String
+    }
+    class Accesorio {
+        - tipo: String
+        - descripcion: String
+    }
+    abstract class Usuario {
+        - id: String
+        - nombre: String
+        - username: String
+        - password: String
+        - rol: Rol
+    }
+    class Cliente {
+        - inventario: Inventario
+        - historialCompras: List<Compra>
+        - torneosInscritos: List<String>
+        + registrarCompra(compra: Compra): void
+        + getInventario(): Inventario
+    }
+    class Administrador
+    class Compra {
+        - id: String
+        - fecha: LocalDate
+        - cliente: Cliente
+        - productos: List<Producto>
+        + calcularTotal(): BigDecimal
+    }
+    class Torneo {
+        - id: String
+        - nombre: String
+        - fecha: LocalDate
+        - maxParticipantes: int
+        - participantes: List<Cliente>
+        + inscribirCliente(cliente: Cliente): boolean
+        + cancelarInscripcion(clienteId: String): boolean
+    }
+}
+
+package "com.mycompany.proyectofinaldesarollosoft.enums" {
+    enum Rareza
+    enum Rol
+}
+
+package "com.mycompany.proyectofinaldesarollosoft.servicio" {
+    class ServicioTasaCambio {
+        - TASA_POR_DEFECTO: BigDecimal
+        + obtenerTasaUSDACOP(): BigDecimal
+    }
+}
+
+Tienda "1" *-- "1" Inventario : inventario de la tienda
+Tienda "1" o-- "0..*" Usuario
+Tienda "1" o-- "0..*" Torneo
+Tienda --> ServicioTasaCambio
+Cliente "1" *-- "1" Inventario : inventario personal
+Inventario "1" o-- "0..*" Producto
+Producto <|-- Carta
+Producto <|-- Booster
+Producto <|-- ProductoSellado
+Producto <|-- Accesorio
+Booster "1" *-- "10" Carta
+Usuario <|-- Cliente
+Usuario <|-- Administrador
+Cliente "1" -- "0..*" Compra
+Compra "1" o-- "1..*" Producto
+Torneo "1" o-- "0..*" Cliente : participantes
+Carta --> Rareza
+Usuario --> Rol
+note right of Torneo
+  La inscripción requiere cupo disponible
+  y fecha de hoy o futura.
+end note
+note right of Tienda
+  La compra transfiere el producto
+  del inventario de la tienda
+  al inventario del cliente.
+end note
+@enduml

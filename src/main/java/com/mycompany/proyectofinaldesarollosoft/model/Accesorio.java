@@ -22,4 +22,8 @@ public class Accesorio extends Producto {
     public String getTipo() {
         return tipo;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 }
