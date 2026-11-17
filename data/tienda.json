@@ -5,12 +5,24 @@
       "id": "admin-default",
       "nombre": "Administrador",
       "username": "admin",
-      "credencial": "GqwADrymGrnojBMEkNY9kg\u003d\u003d:cnmDXkRiFEUqUeGeNoyw/EVqfQMp/p78IzP5/kFni1o\u003d",
+      "credencial": "RpftChMHz9b0TD1BJs0FQg\u003d\u003d:KXfslCQMQnIf+ThMbsKA7BSIObUjNTAb66YPhwRaVuE\u003d",
       "rol": "ADMIN"
+    },
+    {
+      "id": "5869",
+      "nombre": "jose",
+      "username": "321",
+      "credencial": "F/ijijQMAk2nx8xrtPh+uQ\u003d\u003d:gl/pa0et4Twi9Bijlzwfuhp/px1wYzt7dXqM1ISZXtI\u003d",
+      "rol": "CLIENTE"
     }
   ],
   "productosTienda": [],
-  "inventariosClientes": [],
+  "inventariosClientes": [
+    {
+      "clienteId": "5869",
+      "productos": []
+    }
+  ],
   "compras": [],
   "torneos": []
 }
