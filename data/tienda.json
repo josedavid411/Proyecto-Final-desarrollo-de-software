@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "usuarios": [
+    {
+      "id": "admin-default",
+      "nombre": "Administrador",
+      "username": "admin",
+      "credencial": "GqwADrymGrnojBMEkNY9kg\u003d\u003d:cnmDXkRiFEUqUeGeNoyw/EVqfQMp/p78IzP5/kFni1o\u003d",
+      "rol": "ADMIN"
+    }
+  ],
+  "productosTienda": [],
+  "inventariosClientes": [],
+  "compras": [],
+  "torneos": []
+}
