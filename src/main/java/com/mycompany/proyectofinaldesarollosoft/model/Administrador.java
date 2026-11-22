@@ -1,0 +1,18 @@
+package com.mycompany.proyectofinaldesarollosoft.model;
+
+import com.mycompany.proyectofinaldesarollosoft.enums.Rol;
+
+public class Administrador extends Usuario {
+
+    public Administrador(String id, String nombre, String username, String password) {
+        super(id, nombre, username, password, Rol.ADMIN);
+    }
+
+    public static Administrador restaurar(String id, String nombre, String username, String credencial) {
+        return new Administrador(id, nombre, username, credencial, true);
+    }
+
+    private Administrador(String id, String nombre, String username, String credencial, boolean credencialHasheada) {
+        super(id, nombre, username, credencial, Rol.ADMIN, credencialHasheada);
+    }
+}
