@@ -289,6 +289,10 @@ public class Tienda {
         return inventario;
     }
 
+    public ServicioTasaCambio getServicioTasaCambio() {
+        return servicioTasaCambio;
+    }
+
     public PersistenciaJson getPersistencia() {
         return persistencia;
     }
