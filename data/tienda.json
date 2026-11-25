@@ -14,15 +14,174 @@
       "username": "321",
       "credencial": "F/ijijQMAk2nx8xrtPh+uQ\u003d\u003d:gl/pa0et4Twi9Bijlzwfuhp/px1wYzt7dXqM1ISZXtI\u003d",
       "rol": "CLIENTE"
+    },
+    {
+      "id": "5566",
+      "nombre": "david",
+      "username": "5658",
+      "credencial": "r4aHhDC5N5IfbpSJ/o0hfw\u003d\u003d:mFLf5Q3BVbldupKzilkH/0nUqKL3s2gOrfkiKoQ9M1s\u003d",
+      "rol": "CLIENTE"
     }
   ],
   "productosTienda": [],
   "inventariosClientes": [
     {
       "clienteId": "5869",
+      "productos": [
+        {
+          "tipo": "CARTA",
+          "id": "2221",
+          "nombre": "trishula",
+          "precioBaseUSD": 55,
+          "precioCOP": 220000.00,
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "BOOSTER",
+          "id": "3333",
+          "nombre": "nhola",
+          "precioBaseUSD": 100,
+          "precioCOP": 400000.00,
+          "disponible": true,
+          "abierto": true,
+          "propietarioId": "5869",
+          "cartas": [
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "2221",
+              "nombre": "trishula",
+              "precioBaseUSD": 55,
+              "precioCOP": 220000.00,
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clienteId": "5566",
       "productos": []
     }
   ],
-  "compras": [],
-  "torneos": []
+  "compras": [
+    {
+      "id": "e559c35b-db19-4010-9f65-0daebea945ab",
+      "fecha": "2026-11-17",
+      "clienteId": "5869",
+      "productoIds": [
+        "2221"
+      ]
+    },
+    {
+      "id": "5d4a25a5-bfb7-4256-9cf9-04d77faaf260",
+      "fecha": "2026-11-17",
+      "clienteId": "5869",
+      "productoIds": [
+        "3333"
+      ]
+    }
+  ],
+  "torneos": [
+    {
+      "id": "3639",
+      "nombre": "pokemon",
+      "fecha": "2026-08-12",
+      "maxParticipantes": 19,
+      "participantesIds": []
+    }
+  ]
 }

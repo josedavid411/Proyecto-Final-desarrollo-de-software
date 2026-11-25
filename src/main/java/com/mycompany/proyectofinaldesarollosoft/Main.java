@@ -37,7 +37,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        Path archivo = args.length == 0 ? Path.of("data", "tienda.json") : Path.of(args[0]);
+        boolean modoConsola = args.length > 0 && "--cli".equals(args[0]);
+        String[] argumentos = modoConsola ? java.util.Arrays.copyOfRange(args, 1, args.length) : args;
+        Path archivo = argumentos.length == 0 ? Path.of("data", "tienda.json") : Path.of(argumentos[0]);
         ServicioTasaCambio servicioTasa = new ServicioTasaCambio();
         Tienda tienda = new Tienda(servicioTasa, new PersistenciaJson(archivo));
 
@@ -47,6 +49,19 @@ public class Main {
         ControladorBooster controladorBooster = new ControladorBooster(tienda);
         ControladorCompra controladorCompra = new ControladorCompra(tienda);
         ControladorTorneo controladorTorneo = new ControladorTorneo(tienda);
+
+        if (!modoConsola) {
+            new ServidorApi(
+                    tienda,
+                    servicioTasa,
+                    controladorAutenticacion,
+                    controladorUsuario,
+                    controladorProducto,
+                    controladorBooster,
+                    controladorCompra,
+                    controladorTorneo).iniciar();
+            return;
+        }
 
         try (Scanner scanner = new Scanner(System.in)) {
             Usuario usuarioActual = null;
