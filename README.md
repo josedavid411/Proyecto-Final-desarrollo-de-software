@@ -144,13 +144,10 @@ La colección está en `postman/Cards4Play.postman_collection.json` e incluye ca
 
 ## Despliegue
 
-URL pública: [pegar aquí la URL del PaaS]
+URL pública: https://proyecto-final-desarrollo-de-software-production.up.railway.app/inventario
 
 ## Flujo de trabajo con Git
 
 - `main` contiene siempre una versión estable.
 - Cada funcionalidad se desarrolla en su propia rama (por ejemplo `feature/boosters`, `feature/api-rest`, `feature/docker`) y se integra a `main` con merge.
-- Todos los integrantes tienen commits con mensajes descriptivos.
-
-## URL pública del PaaS 
-https://proyecto-final-desarrollo-de-software-production.up.railway.app/inventario
+- Todos los integrantes tienen commits con mensajes descriptivos. 
