@@ -1,5 +1,8 @@
 package com.mycompany.proyectofinaldesarollosoft.model;
 
+import com.mycompany.proyectofinaldesarollosoft.excepcion.ConflictoException;
+import com.mycompany.proyectofinaldesarollosoft.excepcion.NoEncontradoException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,35 +27,34 @@ public class Torneo {
         this.maxParticipantes = maxParticipantes;
     }
 
-    public boolean inscribirCliente(Cliente cliente) {
+    public void inscribirCliente(Cliente cliente) {
         if (cliente == null) {
             throw new IllegalArgumentException("El cliente es obligatorio.");
         }
-        if (!(participantes.size() < maxParticipantes)) {
-            throw new IllegalStateException("El torneo no tiene cupos disponibles.");
-        }
-        if (LocalDate.now().isAfter(this.fecha)) {
-            throw new IllegalStateException("No se puede inscribir en un torneo cuya fecha ya pasó.");
-        }
         if (cliente.estaInscritoEn(id)
                 || participantes.stream().anyMatch(actual -> actual.getId().equals(cliente.getId()))) {
-            throw new IllegalStateException("El cliente ya está inscrito en este torneo.");
+            throw new ConflictoException("El cliente ya está inscrito en este torneo.");
+        }
+        if (participantes.size() >= maxParticipantes) {
+            throw new ConflictoException("El torneo no tiene cupos disponibles.");
+        }
+        if (LocalDate.now().isAfter(this.fecha)) {
+            throw new ConflictoException("No se puede inscribir en un torneo cuya fecha ya pasó.");
         }
         cliente.registrarInscripcion(id);
         participantes.add(cliente);
-        return true;
     }
 
-    public boolean cancelarInscripcion(String clienteId) {
+    public void cancelarInscripcion(String clienteId) {
         for (int i = 0; i < participantes.size(); i++) {
             Cliente cliente = participantes.get(i);
             if (cliente.getId().equals(clienteId)) {
                 participantes.remove(i);
                 cliente.cancelarInscripcion(id);
-                return true;
+                return;
             }
         }
-        return false;
+        throw new NoEncontradoException("El cliente no está inscrito en este torneo.");
     }
 
     public void restaurarParticipante(Cliente cliente) {

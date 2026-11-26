@@ -58,7 +58,8 @@ public class ServicioTasaCambio {
         } catch (RuntimeException ignored) {
             // Una falla de la consulta se representa mediante la tasa de respaldo.
         }
-        System.out.println("La API no respondió, por lo que se toma un valor por defecto de " + tasaDefecto);
+        System.out.println(
+                "La API no respondió, por lo que se toma un valor por defecto de " + tasaDefecto.toPlainString());
         ultimaConsulta = new ResultadoTasa(tasaDefecto, Fuente.DEFECTO);
         return ultimaConsulta;
     }
