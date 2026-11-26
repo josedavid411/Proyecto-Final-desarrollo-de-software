@@ -4,6 +4,7 @@ import com.mycompany.proyectofinaldesarollosoft.model.Cliente;
 import com.mycompany.proyectofinaldesarollosoft.model.Tienda;
 import com.mycompany.proyectofinaldesarollosoft.model.Torneo;
 import com.mycompany.proyectofinaldesarollosoft.model.Usuario;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -20,11 +21,11 @@ public class ControladorTorneo {
         return tienda.crearTorneo(actor, id, nombre, fecha, maxParticipantes);
     }
 
-    public boolean inscribirCliente(Cliente cliente, String torneoId) {
-        return tienda.inscribirCliente(cliente, torneoId);
+    public void inscribirCliente(Cliente cliente, String torneoId) {
+        tienda.inscribirCliente(cliente, torneoId);
     }
 
-    public boolean cancelarInscripcion(Cliente cliente, String torneoId) {
-        return tienda.cancelarInscripcion(cliente, torneoId);
+    public void cancelarInscripcion(Cliente cliente, String torneoId) {
+        tienda.cancelarInscripcion(cliente, torneoId);
     }
 }

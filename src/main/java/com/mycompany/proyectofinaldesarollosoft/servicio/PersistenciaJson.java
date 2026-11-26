@@ -133,7 +133,11 @@ public class PersistenciaJson {
                     datos.disponible);
             default -> throw new IllegalArgumentException("Tipo de producto guardado desconocido: " + datos.tipo);
         };
-        producto.actualizarPrecio(datos.precioCOP);
+        if (datos.fuenteTasa != null) {
+            producto.actualizarPrecio(datos.precioCOP, datos.fuenteTasa);
+        } else {
+            producto.actualizarPrecio(datos.precioCOP);
+        }
         if (!datos.disponible) {
             producto.marcarNoDisponible();
         }
@@ -146,6 +150,7 @@ public class PersistenciaJson {
         datos.nombre = producto.getNombre();
         datos.precioBaseUSD = producto.getPrecioBaseUSD();
         datos.precioCOP = producto.getPrecioCOP();
+        datos.fuenteTasa = producto.getFuenteTasa();
         datos.disponible = producto.estaDisponible();
         if (producto instanceof Carta carta) {
             datos.tipo = "CARTA";
@@ -226,6 +231,7 @@ public class PersistenciaJson {
         public String nombre;
         public BigDecimal precioBaseUSD;
         public BigDecimal precioCOP;
+        public String fuenteTasa;
         public boolean disponible = true;
         public String rareza;
         public String descripcion;

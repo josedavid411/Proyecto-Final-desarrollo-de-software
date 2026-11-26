@@ -1,9 +1,11 @@
 package com.mycompany.proyectofinaldesarollosoft.controller;
 
+import com.mycompany.proyectofinaldesarollosoft.excepcion.ProhibidoException;
 import com.mycompany.proyectofinaldesarollosoft.model.Cliente;
 import com.mycompany.proyectofinaldesarollosoft.model.Compra;
 import com.mycompany.proyectofinaldesarollosoft.model.Tienda;
 import com.mycompany.proyectofinaldesarollosoft.model.Usuario;
+
 import java.util.Objects;
 
 public class ControladorCompra {
@@ -14,9 +16,9 @@ public class ControladorCompra {
     }
 
     public Compra procesarCompra(Usuario actor, String productoId) {
-        if (!(actor instanceof Cliente cliente)) {
-            throw new SecurityException("Solo un Cliente autenticado puede realizar compras.");
+        if (!(actor instanceof Cliente)) {
+            throw new ProhibidoException("Solo un Cliente autenticado puede realizar compras.");
         }
-        return tienda.comprarProducto(cliente, productoId);
+        return tienda.comprarProducto((Cliente) actor, productoId);
     }
 }

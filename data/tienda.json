@@ -21,9 +21,213 @@
       "username": "5658",
       "credencial": "r4aHhDC5N5IfbpSJ/o0hfw\u003d\u003d:mFLf5Q3BVbldupKzilkH/0nUqKL3s2gOrfkiKoQ9M1s\u003d",
       "rol": "CLIENTE"
+    },
+    {
+      "id": "ba9bbdc8-4e91-4a24-a3e7-0c445f738b12",
+      "nombre": "Cliente Uno",
+      "username": "cliente1_1795664364261",
+      "credencial": "Kh2N98mppVee2qIdKtNEUQ\u003d\u003d:XyxxS49AvIK25UhEoIkCxY6SD7rK5yuFbIQppCnzbhg\u003d",
+      "rol": "CLIENTE"
+    },
+    {
+      "id": "e87bd062-6852-4120-9244-fdd1428599fb",
+      "nombre": "Cliente Dos",
+      "username": "cliente2_1795664364642",
+      "credencial": "OMMVNShtrL4fAt+/Z/XSvA\u003d\u003d:oUrl2/6dSWNXeOTTBVTDX/oPUTbI5uC5f/D+B9a+1dI\u003d",
+      "rol": "CLIENTE"
     }
   ],
-  "productosTienda": [],
+  "productosTienda": [
+    {
+      "tipo": "CARTA",
+      "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+      "nombre": "Goblin de prueba",
+      "precioBaseUSD": 0.25,
+      "precioCOP": 879.01,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "rareza": "NORMAL",
+      "abierto": false
+    },
+    {
+      "tipo": "CARTA",
+      "id": "73b65695-b529-44fa-a88a-354e4ce6a875",
+      "nombre": "Elfo explorador",
+      "precioBaseUSD": 0.75,
+      "precioCOP": 2637.04,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "rareza": "POCO_COMUN",
+      "abierto": false
+    },
+    {
+      "tipo": "CARTA",
+      "id": "f2a70e6b-ec68-4dd7-b46e-360939503179",
+      "nombre": "Dragón joven",
+      "precioBaseUSD": 3.5,
+      "precioCOP": 12306.18,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "rareza": "RARO",
+      "abierto": false
+    },
+    {
+      "tipo": "CARTA",
+      "id": "0feae923-75e0-4a9b-9252-08d9d08ac0a9",
+      "nombre": "Fénix rojo",
+      "precioBaseUSD": 12,
+      "precioCOP": 42192.62,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "rareza": "SUPER_RARO",
+      "abierto": false
+    },
+    {
+      "tipo": "CARTA",
+      "id": "0e80b9ce-bb65-4386-acc6-b9fdd8dfbe4d",
+      "nombre": "Titán ancestral",
+      "precioBaseUSD": 40,
+      "precioCOP": 140642.08,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "rareza": "ULTRA_RARO",
+      "abierto": false
+    },
+    {
+      "tipo": "ACCESORIO",
+      "id": "7f3d1f86-07d3-4543-ad38-9c63afa96def",
+      "nombre": "Protectores",
+      "precioBaseUSD": 8,
+      "precioCOP": 28128.42,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "descripcion": "100 unidades",
+      "tipoAccesorio": "Fundas",
+      "abierto": false
+    },
+    {
+      "tipo": "BOOSTER",
+      "id": "8cdc3d3e-84e2-4596-a051-c9fbbfb8561b",
+      "nombre": "Booster B",
+      "precioBaseUSD": 6,
+      "precioCOP": 21096.31,
+      "fuenteTasa": "API",
+      "disponible": true,
+      "abierto": false,
+      "cartas": [
+        {
+          "tipo": "CARTA",
+          "id": "0feae923-75e0-4a9b-9252-08d9d08ac0a9",
+          "nombre": "Fénix rojo",
+          "precioBaseUSD": 12,
+          "precioCOP": 42192.62,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "SUPER_RARO",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "73b65695-b529-44fa-a88a-354e4ce6a875",
+          "nombre": "Elfo explorador",
+          "precioBaseUSD": 0.75,
+          "precioCOP": 2637.04,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "POCO_COMUN",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+          "nombre": "Goblin de prueba",
+          "precioBaseUSD": 0.25,
+          "precioCOP": 879.01,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "NORMAL",
+          "abierto": false
+        },
+        {
+          "tipo": "CARTA",
+          "id": "73b65695-b529-44fa-a88a-354e4ce6a875",
+          "nombre": "Elfo explorador",
+          "precioBaseUSD": 0.75,
+          "precioCOP": 2637.04,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "rareza": "POCO_COMUN",
+          "abierto": false
+        }
+      ]
+    }
+  ],
   "inventariosClientes": [
     {
       "clienteId": "5869",
@@ -34,6 +238,7 @@
           "nombre": "trishula",
           "precioBaseUSD": 55,
           "precioCOP": 220000.00,
+          "fuenteTasa": "DEFECTO",
           "disponible": true,
           "rareza": "NORMAL",
           "abierto": false
@@ -44,6 +249,7 @@
           "nombre": "nhola",
           "precioBaseUSD": 100,
           "precioCOP": 400000.00,
+          "fuenteTasa": "DEFECTO",
           "disponible": true,
           "abierto": true,
           "propietarioId": "5869",
@@ -54,6 +260,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -64,6 +271,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -74,6 +282,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -84,6 +293,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -94,6 +304,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -104,6 +315,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -114,6 +326,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -124,6 +337,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -134,6 +348,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -144,6 +359,7 @@
               "nombre": "trishula",
               "precioBaseUSD": 55,
               "precioCOP": 220000.00,
+              "fuenteTasa": "DEFECTO",
               "disponible": true,
               "rareza": "NORMAL",
               "abierto": false
@@ -154,6 +370,149 @@
     },
     {
       "clienteId": "5566",
+      "productos": []
+    },
+    {
+      "clienteId": "ba9bbdc8-4e91-4a24-a3e7-0c445f738b12",
+      "productos": [
+        {
+          "tipo": "BOOSTER",
+          "id": "5d4df7fe-ad7a-4296-a097-866c0d9d4243",
+          "nombre": "Booster A",
+          "precioBaseUSD": 5,
+          "precioCOP": 17580.26,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "abierto": true,
+          "propietarioId": "ba9bbdc8-4e91-4a24-a3e7-0c445f738b12",
+          "cartas": [
+            {
+              "tipo": "CARTA",
+              "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+              "nombre": "Goblin de prueba",
+              "precioBaseUSD": 0.25,
+              "precioCOP": 879.01,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+              "nombre": "Goblin de prueba",
+              "precioBaseUSD": 0.25,
+              "precioCOP": 879.01,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "f2a70e6b-ec68-4dd7-b46e-360939503179",
+              "nombre": "Dragón joven",
+              "precioBaseUSD": 3.5,
+              "precioCOP": 12306.18,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+              "nombre": "Goblin de prueba",
+              "precioBaseUSD": 0.25,
+              "precioCOP": 879.01,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+              "nombre": "Goblin de prueba",
+              "precioBaseUSD": 0.25,
+              "precioCOP": 879.01,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+              "nombre": "Goblin de prueba",
+              "precioBaseUSD": 0.25,
+              "precioCOP": 879.01,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "f2a70e6b-ec68-4dd7-b46e-360939503179",
+              "nombre": "Dragón joven",
+              "precioBaseUSD": 3.5,
+              "precioCOP": 12306.18,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "a4217b96-40be-46fb-b21a-fa685700706d",
+              "nombre": "Goblin de prueba",
+              "precioBaseUSD": 0.25,
+              "precioCOP": 879.01,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "NORMAL",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "0feae923-75e0-4a9b-9252-08d9d08ac0a9",
+              "nombre": "Fénix rojo",
+              "precioBaseUSD": 12,
+              "precioCOP": 42192.62,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "SUPER_RARO",
+              "abierto": false
+            },
+            {
+              "tipo": "CARTA",
+              "id": "73b65695-b529-44fa-a88a-354e4ce6a875",
+              "nombre": "Elfo explorador",
+              "precioBaseUSD": 0.75,
+              "precioCOP": 2637.04,
+              "fuenteTasa": "API",
+              "disponible": true,
+              "rareza": "POCO_COMUN",
+              "abierto": false
+            }
+          ]
+        },
+        {
+          "tipo": "SELLADO",
+          "id": "1c75c58c-ae40-4356-a5c5-07736121f1ca",
+          "nombre": "Display sellado",
+          "precioBaseUSD": 90,
+          "precioCOP": 316444.68,
+          "fuenteTasa": "API",
+          "disponible": true,
+          "descripcion": "Caja de 36 sobres",
+          "abierto": false
+        }
+      ]
+    },
+    {
+      "clienteId": "e87bd062-6852-4120-9244-fdd1428599fb",
       "productos": []
     }
   ],
@@ -173,6 +532,22 @@
       "productoIds": [
         "3333"
       ]
+    },
+    {
+      "id": "7f2daf55-5f44-42b4-b538-0e362c6ac2f8",
+      "fecha": "2026-11-25",
+      "clienteId": "ba9bbdc8-4e91-4a24-a3e7-0c445f738b12",
+      "productoIds": [
+        "5d4df7fe-ad7a-4296-a097-866c0d9d4243"
+      ]
+    },
+    {
+      "id": "e3098f86-356e-4980-823f-c327f8c33508",
+      "fecha": "2026-11-25",
+      "clienteId": "ba9bbdc8-4e91-4a24-a3e7-0c445f738b12",
+      "productoIds": [
+        "1c75c58c-ae40-4356-a5c5-07736121f1ca"
+      ]
     }
   ],
   "torneos": [
@@ -182,6 +557,15 @@
       "fecha": "2026-08-12",
       "maxParticipantes": 19,
       "participantesIds": []
+    },
+    {
+      "id": "a68a01a3-6e35-45fc-82ec-c50374aa5cf4",
+      "nombre": "Torneo Navidad",
+      "fecha": "2027-01-20",
+      "maxParticipantes": 1,
+      "participantesIds": [
+        "ba9bbdc8-4e91-4a24-a3e7-0c445f738b12"
+      ]
     }
   ]
 }

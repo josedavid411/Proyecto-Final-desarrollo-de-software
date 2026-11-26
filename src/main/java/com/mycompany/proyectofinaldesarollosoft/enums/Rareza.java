@@ -3,17 +3,17 @@ package com.mycompany.proyectofinaldesarollosoft.enums;
 import java.util.concurrent.ThreadLocalRandom;
 
 public enum Rareza {
-    NORMAL("N", 0.50, 0),
-    POCO_COMUN("UC", 0.25, 1),
-    RARO("R", 0.15, 2),
-    SUPER_RARO("SR", 0.07, 3),
-    ULTRA_RARO("UR", 0.03, 4);
+    NORMAL("N", 50, 0),
+    POCO_COMUN("UC", 25, 1),
+    RARO("R", 15, 2),
+    SUPER_RARO("SR", 7, 3),
+    ULTRA_RARO("UR", 3, 4);
 
     private final String codigo;
-    private final double probabilidad;
+    private final int probabilidad;
     private final int orden;
 
-    Rareza(String codigo, double probabilidad, int orden) {
+    Rareza(String codigo, int probabilidad, int orden) {
         this.codigo = codigo;
         this.probabilidad = probabilidad;
         this.orden = orden;
@@ -23,7 +23,7 @@ public enum Rareza {
         return codigo;
     }
 
-    public double getProbabilidad() {
+    public int getProbabilidad() {
         return probabilidad;
     }
 
@@ -53,14 +53,14 @@ public enum Rareza {
     }
 
     public static Rareza sortear() {
-        double valor = ThreadLocalRandom.current().nextDouble();
-        double acumulado = 0;
+        int valor = ThreadLocalRandom.current().nextInt(100);
+        int acumulado = 0;
         for (Rareza rareza : values()) {
             acumulado += rareza.probabilidad;
             if (valor < acumulado) {
                 return rareza;
             }
         }
-        throw new IllegalStateException("Las probabilidades de rareza deben sumar 1.");
+        throw new IllegalStateException("Las probabilidades de rareza deben sumar 100.");
     }
 }

@@ -8,14 +8,15 @@ public abstract class Producto {
     private final String nombre;
     private final BigDecimal precioBaseUSD;
     private BigDecimal precioCOP;
+    private String fuenteTasa = "DEFECTO";
     private boolean disponible = true;
 
     protected Producto(String id, String nombre, BigDecimal precioBaseUSD) {
         if (id == null || id.isBlank() || nombre == null || nombre.isBlank()) {
             throw new IllegalArgumentException("El id y el nombre son obligatorios.");
         }
-        if (precioBaseUSD == null || precioBaseUSD.signum() < 0) {
-            throw new IllegalArgumentException("El precio base en USD debe ser no negativo.");
+        if (precioBaseUSD == null || precioBaseUSD.signum() <= 0) {
+            throw new IllegalArgumentException("El precio base en USD debe ser mayor que cero.");
         }
         this.id = id.trim();
         this.nombre = nombre.trim();
@@ -28,6 +29,14 @@ public abstract class Producto {
             throw new IllegalArgumentException("El precio debe ser mayor o igual a cero.");
         }
         this.precioCOP = precioCOP;
+    }
+
+    public void actualizarPrecio(BigDecimal precioCOP, String fuenteTasa) {
+        if (!"API".equals(fuenteTasa) && !"DEFECTO".equals(fuenteTasa)) {
+            throw new IllegalArgumentException("La fuente de tasa debe ser API o DEFECTO.");
+        }
+        actualizarPrecio(precioCOP);
+        this.fuenteTasa = fuenteTasa;
     }
 
     public BigDecimal calcularPrecioCOP(BigDecimal tasa) {
@@ -55,6 +64,10 @@ public abstract class Producto {
 
     public BigDecimal getPrecioCOP() {
         return precioCOP;
+    }
+
+    public String getFuenteTasa() {
+        return fuenteTasa;
     }
 
     public boolean estaDisponible() {
